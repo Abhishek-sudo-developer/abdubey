@@ -5,7 +5,7 @@ from core.agents import TravelAgent
 class OrchestrationEngine:
     def __init__(self, api_key):
         genai.configure(api_key=api_key)
-        # Using the stable 'gemini-1.5-flash' alias for guaranteed regional availability
+        # Using the standard stable alias for maximum regional compatibility
         self.model = genai.GenerativeModel('gemini-1.5-flash')
 
     async def generate_itinerary(self, user_query, persona):
