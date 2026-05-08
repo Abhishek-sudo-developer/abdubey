@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Travel Orchestrator | Google Prompt War</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Code&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>Travel Orchestrator</h1>
+            <p>Gemini 3 Flash Agentic Travel Engine</p>
+        </header>
+
+        <main>
+            <div class="card">
+                <h3>Select Your Persona</h3>
+                <div class="persona-grid">
+                    <div class="persona-btn active" onclick="setPersona('scout')" id="scout-btn">
+                        <i class="fas fa-compass"></i>
+                        <strong>The Scout</strong>
+                        <span>Adventure</span>
+                    </div>
+                    <div class="persona-btn" onclick="setPersona('epicure')" id="epicure-btn">
+                        <i class="fas fa-utensils"></i>
+                        <strong>The Epicure</strong>
+                        <span>Culinary</span>
+                    </div>
+                    <div class="persona-btn" onclick="setPersona('minimalist')" id="minimalist-btn">
+                        <i class="fas fa-bolt"></i>
+                        <strong>The Minimalist</strong>
+                        <span>Efficiency</span>
+                    </div>
+                </div>
+
+                <div class="input-section">
+                    <input type="text" id="request-input" placeholder="Where do you want to go and what do you want to do?">
+                    <button class="primary-btn" onclick="generatePlan()">Generate Itinerary</button>
+                </div>
+            </div>
+
+            <div id="loading" class="loading">
+                <div class="loading-spinner"></div>
+                <p>Orchestrating logic and querying Google Services...</p>
+            </div>
+
+            <div id="results" class="results-section">
+                <div class="card">
+                    <h3>ReAct Logic Logs</h3>
+                    <div id="logs-container"></div>
+                </div>
+
+                <div class="card">
+                    <h3>Final Itinerary</h3>
+                    <div id="itinerary-output" class="itinerary-output"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

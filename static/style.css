@@ -1,0 +1,194 @@
+:root {
+    --primary: #4285f4;
+    --bg: #0f172a;
+    --card: rgba(30, 41, 59, 0.7);
+    --text: #f8fafc;
+    --accent: #f59e0b;
+}
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    background: radial-gradient(circle at top left, #1e293b, #0f172a);
+    color: var(--text);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+#app {
+    max-width: 1000px;
+    width: 100%;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+h1 {
+    font-size: 3rem;
+    background: linear-gradient(to right, #60a5fa, #a855f7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.card {
+    background: var(--card);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 1.5rem;
+    padding: 2rem;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    margin-bottom: 2rem;
+}
+
+.persona-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.persona-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid transparent;
+    color: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.persona-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.persona-btn.active {
+    border-color: var(--primary);
+    background: rgba(66, 133, 244, 0.2);
+}
+
+.persona-btn i {
+    display: block;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+input[type="text"] {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: white;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+}
+
+button.primary-btn {
+    width: 100%;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+button.primary-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(66, 133, 244, 0.4);
+}
+
+#results {
+    display: none;
+}
+
+.log-entry {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.85rem;
+    padding: 1rem;
+    border-left: 3px solid var(--accent);
+    background: rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+    white-space: pre-wrap;
+}
+
+.itinerary-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+}
+
+.score-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: var(--primary);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 2rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+.reasoning-trace {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px dashed rgba(255, 255, 255, 0.2);
+    font-size: 0.9rem;
+    color: var(--accent);
+    font-style: italic;
+}
+
+.reasoning-trace::before {
+    content: "LOGIC TRACE: ";
+    font-weight: 800;
+    font-size: 0.7rem;
+    letter-spacing: 0.05rem;
+}
+
+.activity-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+    color: #60a5fa;
+}
+
+.location-meta {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: 0.5rem;
+}
+
+.loading {
+    display: none;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 4px solid rgba(255, 255, 255, 0.1);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
